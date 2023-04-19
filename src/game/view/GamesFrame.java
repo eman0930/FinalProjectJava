@@ -1,6 +1,9 @@
 package game.view;
 
 import game.controller.*;
+
+import java.io.IOException;
+
 import javax.swing.*;
 
 public class GamesFrame extends JFrame
@@ -8,7 +11,7 @@ public class GamesFrame extends JFrame
 	private Controller app;
 	private GamesPanel panel;
 	
-	public GamesFrame(Controller app)
+	public GamesFrame(Controller app) throws IOException
 	{
 		super();
 		this.app = app;

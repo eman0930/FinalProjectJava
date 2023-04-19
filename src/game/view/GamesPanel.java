@@ -1,8 +1,13 @@
 package game.view;
 
 import game.controller.*;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class GamesPanel extends JPanel
 {
@@ -16,7 +21,7 @@ public class GamesPanel extends JPanel
 	
 	private SpringLayout layout;
 	
-	public GamesPanel(Controller app)
+	public GamesPanel(Controller app) throws IOException
 	{
 		super();
 		this.app = app;
@@ -29,6 +34,16 @@ public class GamesPanel extends JPanel
 		
 		this.layout = new SpringLayout();
 		
+		
+		
+		BufferedImage img = ImageIO.read(new File("pong.png"));
+		JLabel imgs = new JLabel(new ImageIcon(img));
+		this.pingPongPanel.add(imgs);
+		
+		BufferedImage img1 = ImageIO.read(new File("ticTacToe.png"));
+		JLabel imgs1 = new JLabel(new ImageIcon(img1));
+		this.ticTacPanel.add(imgs1);
+		
 		setupPanel();
 		setupListeners();
 		setupLayout();
@@ -40,6 +55,7 @@ public class GamesPanel extends JPanel
 		this.setBackground(Color.DARK_GRAY);
 		this.pingPongPanel.add(pingPongButton);
 		this.ticTacPanel.add(ticTacToeButton);
+		
 		this.add(ticTacPanel);
 		this.add(pingPongPanel);
 	}
