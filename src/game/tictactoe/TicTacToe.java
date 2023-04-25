@@ -18,7 +18,7 @@ public class TicTacToe implements ActionListener
 	TicTacToe()
 	{
 		
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setSize(800,800);
 		frame.getContentPane().setBackground(new Color(50,50,50));
 		frame.setLayout(new BorderLayout());
@@ -222,13 +222,29 @@ public class TicTacToe implements ActionListener
 			{
 				oWins(2,4,6);
 			}
+		//cats
+		if( (buttons[0].getText()=="X")&&
+			(buttons[1].getText()=="O")&&
+			(buttons[2].getText()=="X")&&
+			(buttons[3].getText()=="X")&&
+			(buttons[4].getText()=="O")&&
+			(buttons[5].getText()=="O")&&
+			(buttons[6].getText()=="O")&&
+			(buttons[7].getText()=="X")&&
+			(buttons[8].getText()=="X"))
+				{
+					cats();
+				}
 	}
 	
 	public void xWins(int a,int b,int c)
 	{
 		buttons[a].setBackground(Color.GREEN);
+		buttons[a].setOpaque(true);
 		buttons[b].setBackground(Color.GREEN);
+		buttons[b].setOpaque(true);
 		buttons[c].setBackground(Color.GREEN);
+		buttons[c].setOpaque(true);
 		
 		for(int i=0;i<9;i++)
 		{
@@ -240,14 +256,53 @@ public class TicTacToe implements ActionListener
 	public void oWins(int a,int b,int c)
 	{
 		buttons[a].setBackground(Color.GREEN);
+		buttons[a].setOpaque(true);
 		buttons[b].setBackground(Color.GREEN);
+		buttons[b].setOpaque(true);
 		buttons[c].setBackground(Color.GREEN);
+		buttons[c].setOpaque(true);
 		
 		for(int i=0;i<9;i++)
 		{
 			buttons[i].setEnabled(false);
 		}
 		textField.setText("O wins");
+	}
+	
+	public void cats()
+	{
+		buttons[1].setBackground(Color.RED);
+		buttons[1].setOpaque(true);
+		
+		buttons[2].setBackground(Color.RED);
+		buttons[2].setOpaque(true);
+		
+		buttons[3].setBackground(Color.RED);
+		buttons[3].setOpaque(true);
+		
+		buttons[4].setBackground(Color.RED);
+		buttons[4].setOpaque(true);
+		
+		buttons[5].setBackground(Color.RED);
+		buttons[5].setOpaque(true);
+		
+		buttons[6].setBackground(Color.RED);
+		buttons[6].setOpaque(true);
+		
+		buttons[7].setBackground(Color.RED);
+		buttons[7].setOpaque(true);
+		
+		buttons[8].setBackground(Color.RED);
+		buttons[8].setOpaque(true);
+		
+		buttons[0].setBackground(Color.RED);
+		buttons[0].setOpaque(true);
+		
+		for(int i=0;i<9;i++)
+		{
+			buttons[i].setEnabled(false);
+		}
+		textField.setText("Cats's Game");
 	}
 	
 	
