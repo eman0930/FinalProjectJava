@@ -34,7 +34,7 @@ public class TicTacToe implements ActionListener
 		titel_panel.setLayout(new BorderLayout());
 		titel_panel.setBounds(0,0,800,100);
 		
-		button_panel.setLayout(new GridLayout());
+		button_panel.setLayout(new GridLayout(3,3));
 		button_panel.setBackground(new Color(150,150,150));
 		
 		for(int i=0;i<9;i++)
@@ -65,7 +65,7 @@ public class TicTacToe implements ActionListener
 					if(buttons[i].getText()=="")
 					{
 						buttons[i].setForeground(new Color(255,0,0));
-						buttons[i].setText("x");
+						buttons[i].setText("X");
 						player1_turn=false;
 						textField.setText("O turn");
 						check();
