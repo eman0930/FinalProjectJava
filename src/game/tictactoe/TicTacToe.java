@@ -260,31 +260,31 @@ public class TicTacToe implements ActionListener
 	
 	public void tie()
 	{
-		buttons[1].setBackground(Color.RED);
+		buttons[1].setBackground(Color.YELLOW);
 		buttons[1].setOpaque(true);
 		
-		buttons[2].setBackground(Color.RED);
+		buttons[2].setBackground(Color.YELLOW);
 		buttons[2].setOpaque(true);
 		
-		buttons[3].setBackground(Color.RED);
+		buttons[3].setBackground(Color.PINK);
 		buttons[3].setOpaque(true);
 		
-		buttons[4].setBackground(Color.RED);
+		buttons[4].setBackground(Color.BLUE);
 		buttons[4].setOpaque(true);
 		
-		buttons[5].setBackground(Color.RED);
+		buttons[5].setBackground(Color.BLUE);
 		buttons[5].setOpaque(true);
 		
-		buttons[6].setBackground(Color.RED);
+		buttons[6].setBackground(Color.BLUE);
 		buttons[6].setOpaque(true);
 		
-		buttons[7].setBackground(Color.RED);
+		buttons[7].setBackground(Color.BLUE);
 		buttons[7].setOpaque(true);
 		
-		buttons[8].setBackground(Color.RED);
+		buttons[8].setBackground(Color.BLUE);
 		buttons[8].setOpaque(true);
 		
-		buttons[0].setBackground(Color.RED);
+		buttons[0].setBackground(Color.BLUE);
 		buttons[0].setOpaque(true);
 		
 		for(int i=0;i<9;i++)
