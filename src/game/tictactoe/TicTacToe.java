@@ -223,15 +223,15 @@ public class TicTacToe implements ActionListener
 				oWins(2,4,6);
 			}
 		//cats
-		if( (buttons[0].getText()=="X")&&
-			(buttons[1].getText()=="O")&&
-			(buttons[2].getText()=="X")&&
-			(buttons[3].getText()=="X")&&
-			(buttons[4].getText()=="O")&&
-			(buttons[5].getText()=="O")&&
-			(buttons[6].getText()=="O")&&
-			(buttons[7].getText()=="X")&&
-			(buttons[8].getText()=="X"))
+		if( (buttons[0].getText()=="O") || (buttons[0].getText()=="X")&&
+			(buttons[1].getText()=="O") || (buttons[1].getText()=="X")&&
+			(buttons[2].getText()=="O") || (buttons[2].getText()=="X")&&
+			(buttons[3].getText()=="O") || (buttons[3].getText()=="X")&&
+			(buttons[4].getText()=="O") || (buttons[4].getText()=="X")&&
+			(buttons[5].getText()=="O") || (buttons[5].getText()=="X")&&
+			(buttons[6].getText()=="O") || (buttons[6].getText()=="X")&&
+			(buttons[7].getText()=="O") || (buttons[7].getText()=="X")&&
+			(buttons[8].getText()=="O") || (buttons[8].getText()=="X"))
 				{
 					cats();
 				}
