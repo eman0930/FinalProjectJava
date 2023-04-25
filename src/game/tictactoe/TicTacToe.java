@@ -44,6 +44,7 @@ public class TicTacToe implements ActionListener
 			buttons[i].setFont(new Font("MV Boli", Font.BOLD,120));
 			buttons[i].setFocusable(false);
 			buttons[i].addActionListener(this);
+			//buttons[i].setText(" ");
 		}
 		
 		titel_panel.add(textField);
@@ -117,124 +118,112 @@ public class TicTacToe implements ActionListener
 		{
 			xWins(0,1,2);
 		}
-		
-		if( (buttons[3].getText()=="X") &&
-			(buttons[4].getText()=="X") &&
-			(buttons[5].getText()=="X"))
-			{
-				xWins(3,4,5);
-			}
-		
-		if( (buttons[6].getText()=="X") &&
-			(buttons[7].getText()=="X") &&
-			(buttons[8].getText()=="X"))
-			{
-				xWins(6,7,8);
-			}
-		
-		if( (buttons[0].getText()=="X") &&
-			(buttons[3].getText()=="X") &&
-			(buttons[6].getText()=="X"))
-			{
-				xWins(0,3,6);
-			}
-		
-		if( (buttons[1].getText()=="X") &&
-			(buttons[4].getText()=="X") &&
-			(buttons[7].getText()=="X"))
-			{
-				xWins(1,4,7);
-			}
-		
-		if( (buttons[2].getText()=="X") &&
-			(buttons[5].getText()=="X") &&
-			(buttons[8].getText()=="X"))
-			{
-				xWins(2,5,8);
-			}
-		
-		if( (buttons[0].getText()=="X") &&
-			(buttons[4].getText()=="X") &&
-			(buttons[8].getText()=="X"))
-			{
-				xWins(0,4,8);
-			}
-		
-		if( (buttons[2].getText()=="X") &&
-			(buttons[4].getText()=="X") &&
-			(buttons[6].getText()=="X"))
-			{
-				xWins(2,4,6);
-			}
+		else if( (buttons[3].getText()=="X") &&
+				 (buttons[4].getText()=="X") &&
+				 (buttons[5].getText()=="X"))
+		{
+			xWins(3,4,5);
+		}
+		else if( (buttons[6].getText()=="X") &&
+				 (buttons[7].getText()=="X") &&
+				 (buttons[8].getText()=="X"))
+		{
+			xWins(6,7,8);
+		}
+		else if( (buttons[0].getText()=="X") &&
+				 (buttons[3].getText()=="X") &&
+				 (buttons[6].getText()=="X"))
+		{
+			xWins(0,3,6);
+		}
+		else if( (buttons[1].getText()=="X") &&
+				 (buttons[4].getText()=="X") &&
+				 (buttons[7].getText()=="X"))
+		{
+			xWins(1,4,7);
+		}
+		else if( (buttons[2].getText()=="X") &&
+				 (buttons[5].getText()=="X") &&
+				 (buttons[8].getText()=="X"))
+		{
+			xWins(2,5,8);
+		}
+		else if( (buttons[0].getText()=="X") &&
+				 (buttons[4].getText()=="X") &&
+				 (buttons[8].getText()=="X"))
+		{
+			xWins(0,4,8);
+		}
+		else if( (buttons[2].getText()=="X") &&
+				 (buttons[4].getText()=="X") &&
+				 (buttons[6].getText()=="X"))
+		{
+			xWins(2,4,6);
+		}
 		//check O win 
-		if( (buttons[0].getText()=="O") &&
-			(buttons[1].getText()=="O") &&
-			(buttons[2].getText()=="O"))
+		else if( (buttons[0].getText()=="O") &&
+				 (buttons[1].getText()=="O") &&
+				 (buttons[2].getText()=="O"))
+		{
+			oWins(0,1,2);
+		}
+		else if( (buttons[3].getText()=="O") &&
+				 (buttons[4].getText()=="O") &&
+				 (buttons[5].getText()=="O"))
+		{
+			oWins(3,4,5);
+		}
+		else if( (buttons[6].getText()=="O") &&
+				 (buttons[7].getText()=="O") &&
+				 (buttons[8].getText()=="O"))
+		{
+			oWins(6,7,8);
+		}
+		else if( (buttons[0].getText()=="O") &&
+				 (buttons[3].getText()=="O") &&
+				 (buttons[6].getText()=="O"))
+		{
+			oWins(0,3,6);
+		}
+		else if( (buttons[1].getText()=="O") &&
+				 (buttons[4].getText()=="O") &&
+				 (buttons[7].getText()=="O"))
+		{
+			oWins(1,4,7);
+		}
+		else if( (buttons[2].getText()=="O") &&
+				 (buttons[5].getText()=="O") &&
+				 (buttons[8].getText()=="O"))
+		{
+			oWins(2,5,8);
+		}
+		else if( (buttons[0].getText()=="O") &&
+				 (buttons[4].getText()=="O") &&
+				 (buttons[8].getText()=="O"))
+		{
+			oWins(0,4,8);
+		}
+		else if( (buttons[2].getText()=="O") &&
+				 (buttons[4].getText()=="O") &&
+				 (buttons[6].getText()=="O"))
+		{
+			oWins(2,4,6);
+		}
+		else
+		{
+			int checkTie = 0;
+			for(JButton i : buttons)
 			{
-				oWins(0,1,2);
-			}
-		
-		if( (buttons[3].getText()=="O") &&
-			(buttons[4].getText()=="O") &&
-			(buttons[5].getText()=="O"))
-			{
-				oWins(3,4,5);
-			}
-		
-		if( (buttons[6].getText()=="O") &&
-			(buttons[7].getText()=="O") &&
-			(buttons[8].getText()=="O"))
-			{
-				oWins(6,7,8);
-			}
-		
-		if( (buttons[0].getText()=="O") &&
-			(buttons[3].getText()=="O") &&
-			(buttons[6].getText()=="O"))
-			{
-				oWins(0,3,6);
-			}
-		
-		if( (buttons[1].getText()=="O") &&
-			(buttons[4].getText()=="O") &&
-			(buttons[7].getText()=="O"))
-			{
-				oWins(1,4,7);
-			}
-		
-		if( (buttons[2].getText()=="O") &&
-			(buttons[5].getText()=="O") &&
-			(buttons[8].getText()=="O"))
-			{
-				oWins(2,5,8);
-			}
-		
-		if( (buttons[0].getText()=="O") &&
-			(buttons[4].getText()=="O") &&
-			(buttons[8].getText()=="O"))
-			{
-				oWins(0,4,8);
-			}
-		
-		if( (buttons[2].getText()=="O") &&
-			(buttons[4].getText()=="O") &&
-			(buttons[6].getText()=="O"))
-			{
-				oWins(2,4,6);
-			}
-		//cats
-		if( (buttons[0].getText()=="O") || (buttons[0].getText()=="X")&&
-			(buttons[1].getText()=="O") || (buttons[1].getText()=="X")&&
-			(buttons[2].getText()=="O") || (buttons[2].getText()=="X")&&
-			(buttons[3].getText()=="O") || (buttons[3].getText()=="X")&&
-			(buttons[4].getText()=="O") || (buttons[4].getText()=="X")&&
-			(buttons[5].getText()=="O") || (buttons[5].getText()=="X")&&
-			(buttons[6].getText()=="O") || (buttons[6].getText()=="X")&&
-			(buttons[7].getText()=="O") || (buttons[7].getText()=="X")&&
-			(buttons[8].getText()=="O") || (buttons[8].getText()=="X"))
+				if(i.getText()=="O" || i.getText()=="X")
 				{
-					cats();
+					checkTie++;
 				}
+				if(checkTie==9)
+				{
+					tie();
+				}
+			}
+		}
 	}
 	
 	public void xWins(int a,int b,int c)
@@ -269,7 +258,7 @@ public class TicTacToe implements ActionListener
 		textField.setText("O wins");
 	}
 	
-	public void cats()
+	public void tie()
 	{
 		buttons[1].setBackground(Color.RED);
 		buttons[1].setOpaque(true);
@@ -302,7 +291,7 @@ public class TicTacToe implements ActionListener
 		{
 			buttons[i].setEnabled(false);
 		}
-		textField.setText("Cats's Game");
+		textField.setText("Tie");
 	}
 	
 	
