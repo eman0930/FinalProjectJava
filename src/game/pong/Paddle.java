@@ -15,12 +15,12 @@ public class Paddle extends Rectangle
 		this.id=id;
 	}
 	
-	public void keyPressed(keyEvent e)
+	public void keyPressed(KeyEvent e)
 	{
 		switch(id)
 		{
 		case 1:
-			if(e.getKeyCode()==keyEvent.VK_W)
+			if(e.getKeyCode()==KeyEvent.VK_W)
 			{
 				setYDirection(-speed);
 			}
@@ -30,7 +30,7 @@ public class Paddle extends Rectangle
 			}
 			break;
 		case 2:
-			if(e.getKeyCode()==keyEvent.VK_UP)
+			if(e.getKeyCode()==KeyEvent.VK_UP)
 			{
 				setYDirection(-speed);
 			}
@@ -42,12 +42,12 @@ public class Paddle extends Rectangle
 		}
 	}
 	
-	public void KeyReleased(keyEvent e)
+	public void KeyReleased(KeyEvent e)
 	{
 		switch(id)
 		{
 		case 1:
-			if(e.getKeyCode()==keyEvent.VK_W)
+			if(e.getKeyCode()==KeyEvent.VK_W)
 			{
 				setYDirection(0);
 			}

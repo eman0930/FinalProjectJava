@@ -2,6 +2,7 @@ package game.view;
 
 import game.controller.*;
 import game.tictactoe.*;
+import game.pong.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -14,6 +15,7 @@ public class GamesPanel extends JPanel
 {
 	private Controller app;
 	private MainTicTac main;
+	private PongGame Pong;
 	
 	private JButton pingPongButton;
 	private JButton ticTacToeButton;
@@ -65,6 +67,7 @@ public class GamesPanel extends JPanel
 	private void setupListeners()
 	{
 		ticTacToeButton.addActionListener(Click -> main.runGame(null));
+		pingPongButton.addActionListener(Click -> Pong.play(null));
 	}
 	
 	private void setupLayout()

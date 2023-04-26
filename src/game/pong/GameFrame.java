@@ -7,7 +7,7 @@ public class GameFrame extends JFrame
 {
 	GamePanel panel;
 	
-	gameFrame()
+	GameFrame()
 	{
 		panel = new GamePanel();
 		this.add(panel);
