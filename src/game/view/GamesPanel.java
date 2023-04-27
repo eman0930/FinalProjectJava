@@ -30,23 +30,33 @@ public class GamesPanel extends JPanel
 		super();
 		this.app = app;
 		
+		this.layout = new SpringLayout();
+		
 		this.pingPongButton = new JButton("Play!");
+		
+		
 		this.ticTacToeButton = new JButton("Play!");
 		
 		this.pingPongPanel = new JPanel();
 		this.ticTacPanel = new JPanel();
 		
-		this.layout = new SpringLayout();
 		
 		
 		
 		BufferedImage img = ImageIO.read(new File("pong.png"));
-		JLabel imgs = new JLabel(new ImageIcon(img));
-		this.pingPongPanel.add(imgs);
+		pingPongButton.setIcon(new ImageIcon(img));
+		pingPongButton.setHorizontalTextPosition(JButton.CENTER);
+		pingPongButton.setVerticalTextPosition(JButton.CENTER);
+		pingPongButton.setForeground(Color.RED);
+		pingPongButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		
 		
 		BufferedImage img1 = ImageIO.read(new File("ticTacToe.png"));
-		JLabel imgs1 = new JLabel(new ImageIcon(img1));
-		this.ticTacPanel.add(imgs1);
+		ticTacToeButton.setIcon(new ImageIcon(img1));
+		ticTacToeButton.setHorizontalTextPosition(JButton.CENTER);
+		ticTacToeButton.setVerticalTextPosition(JButton.CENTER);
+		ticTacToeButton.setForeground(Color.BLACK);
+		ticTacToeButton.setFont(new Font("Arial", Font.PLAIN, 40));
 		
 		setupPanel();
 		setupListeners();
@@ -59,6 +69,8 @@ public class GamesPanel extends JPanel
 		this.setBackground(Color.DARK_GRAY);
 		this.pingPongPanel.add(pingPongButton);
 		this.ticTacPanel.add(ticTacToeButton);
+		this.pingPongPanel.setBackground(Color.DARK_GRAY);
+		this.ticTacPanel.setBackground(Color.DARK_GRAY);
 		
 		this.add(ticTacPanel);
 		this.add(pingPongPanel);
@@ -72,7 +84,7 @@ public class GamesPanel extends JPanel
 	
 	private void setupLayout()
 	{
-		layout.putConstraint(SpringLayout.NORTH, ticTacPanel, 250, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.NORTH, ticTacPanel, 80, SpringLayout.NORTH, this);
 		layout.putConstraint(SpringLayout.EAST, ticTacPanel, -70, SpringLayout.EAST, this);
 		layout.putConstraint(SpringLayout.SOUTH, ticTacPanel, -250, SpringLayout.SOUTH, this);
 		layout.putConstraint(SpringLayout.WEST, ticTacPanel, -685, SpringLayout.EAST, this);

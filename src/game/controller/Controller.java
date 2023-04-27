@@ -17,4 +17,9 @@ public class Controller
 	{
 	
 	}
+	
+	public void handleError(Exception error)
+	{
+		//JOptionPane.showMessageDialog(window, error.getMessage(), "Oops!", JOptionPane.ERROR_MESSAGE);
+	}
 }
