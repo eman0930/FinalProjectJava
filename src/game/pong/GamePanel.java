@@ -1,5 +1,7 @@
 package game.pong;
 
+
+import game.controller.IOcontroller.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -117,6 +119,7 @@ Toolkit.getDefaultToolkit().sync();
 			newPaddles();
 			newBall();
 			System.out.println("Player 2: "+score.player2);
+			saveTextToFile();
 		}
 		if(ball.x >= GAME_WIDTH-BALL_DIAMETER) 
 		{
