@@ -10,16 +10,16 @@ public class GamesFrame extends JFrame
 {
 	private Controller app;
 	private GamesPanel panel;
-	
+
 	public GamesFrame(Controller app) throws IOException
 	{
 		super();
 		this.app = app;
 		this.panel = new GamesPanel(this.app);
-		
+
 		setupFrame();
 	}
-	
+
 	private void setupFrame()
 	{
 		this.setContentPane(panel);
@@ -29,7 +29,5 @@ public class GamesFrame extends JFrame
 		this.setResizable(false);
 		this.setVisible(true);
 	}
-	
-	
-	
+
 }
