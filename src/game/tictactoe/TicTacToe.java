@@ -15,7 +15,7 @@ public class TicTacToe implements ActionListener
 	JButton[] buttons = new JButton[9];
 	boolean player1_turn;
 
-	TicTacToe()
+	public TicTacToe()
 	{
 
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

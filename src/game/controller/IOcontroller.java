@@ -15,17 +15,49 @@ public class IOcontroller
 	
 	
 	   
-		//Instantiating the File class
-	    File file = new File("gameResolts.txt");
-	    
-	    //Instantiating the PrintStream class
-	    
-	    PrintStream stream = new PrintStream(file);
-	    System.out.println("From now on "+file.getAbsolutePath()+" will be your console");
-	    System.setOut(stream);
-	    //Printing values to file
-	    System.out.println("Hello, how are you");
-	    System.out.println("Welcome to Tutorialspoint");
+	public static void saveTextToFile(Controller app, String path, String text)
+	{
+		String filename = path;
+
+		try (Scanner textScanner = new Scanner(text); PrintWriter textWriter = new PrintWriter(filename))
+		{
+			while (textScanner.hasNextLine())
+			{
+				String line = textScanner.nextLine();
+				textWriter.println(line);
+			}
+		}
+		catch (IOException error)
+		{
+			app.handleError(error);
+		}
+	}
 	   
 	
+//	public static String buildDataBasedFilename(String path)
+//	{
+//		String filename = path + "Data Structures Info ";
+//		LocalDateTime currentTime = LocalDateTime.now();
+//
+//		
+//		int minuteTime = currentTime.getMinute();
+//		String minutes = "0";
+//
+//		if (minuteTime < 10)
+//		{
+//			minutes += minuteTime;
+//		}
+//		else
+//		{
+//			minutes = "" + minuteTime;
+//		}
+//
+//		filename += " ";
+//
+//		return filename;
+//	}
+	
 }
+
+
+

@@ -1,6 +1,6 @@
 package game.pong;
 
-import game.controller.IOcontroller;
+import game.controller.Controller;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -15,6 +15,7 @@ public class GamePanel extends JPanel implements Runnable
 	static final int PADDLE_WIDTH = 25;
 	static final int PADDLE_HEIGHT = 100;
 	Thread gameThread;
+	Controller app;
 	Image image;
 	Graphics graphics;
 	Random random;
@@ -23,8 +24,9 @@ public class GamePanel extends JPanel implements Runnable
 	Ball ball;
 	Score score;
 
-	GamePanel()
+	GamePanel(Controller app)
 	{
+		this.app = app;
 		newPaddles();
 		newBall();
 		score = new Score(GAME_WIDTH, GAME_HEIGHT);
@@ -124,6 +126,7 @@ public class GamePanel extends JPanel implements Runnable
 			newPaddles();
 			newBall();
 			System.out.println("Player 2: " + score.player2);
+			app.save("gameResolts.txt","player 2: "+ score.player2);
 
 		}
 		if (ball.x >= GAME_WIDTH - BALL_DIAMETER)
@@ -132,6 +135,7 @@ public class GamePanel extends JPanel implements Runnable
 			newPaddles();
 			newBall();
 			System.out.println("Player 1: " + score.player1);
+			app.save("gameResolts.txt","player 1: "+ score.player1);
 		}
 	}
 

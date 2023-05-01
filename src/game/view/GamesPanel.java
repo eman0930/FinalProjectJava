@@ -14,11 +14,11 @@ import java.io.IOException;
 public class GamesPanel extends JPanel
 {
 	private Controller app;
-	private MainTicTac main;
-	private PongGame Pong;
+	
 
 	private JButton pingPongButton;
 	private JButton ticTacToeButton;
+	private JButton saveScore;
 
 	private JPanel ticTacPanel;
 	private JPanel pingPongPanel;
@@ -35,6 +35,7 @@ public class GamesPanel extends JPanel
 		this.pingPongButton = new JButton("Play!");
 
 		this.ticTacToeButton = new JButton("Play!");
+		this.saveScore = new JButton("save score");
 
 		this.pingPongPanel = new JPanel();
 		this.ticTacPanel = new JPanel();
@@ -64,6 +65,7 @@ public class GamesPanel extends JPanel
 		this.setBackground(Color.DARK_GRAY);
 		this.pingPongPanel.add(pingPongButton);
 		this.ticTacPanel.add(ticTacToeButton);
+		this.add(saveScore);
 		this.pingPongPanel.setBackground(Color.DARK_GRAY);
 		this.ticTacPanel.setBackground(Color.DARK_GRAY);
 
@@ -73,8 +75,9 @@ public class GamesPanel extends JPanel
 
 	private void setupListeners()
 	{
-		ticTacToeButton.addActionListener(Click -> main.runGame(null));
-		pingPongButton.addActionListener(Click -> Pong.play(null));
+		ticTacToeButton.addActionListener(Click -> app.statTicTac());
+		pingPongButton.addActionListener(Click -> app.startPong());
+		saveScore.addActionListener(Click -> outputAndUpdate());
 	}
 
 	private void setupLayout()
@@ -88,6 +91,27 @@ public class GamesPanel extends JPanel
 		layout.putConstraint(SpringLayout.EAST, pingPongPanel, -225, SpringLayout.WEST, ticTacPanel);
 		layout.putConstraint(SpringLayout.SOUTH, pingPongPanel, -0, SpringLayout.SOUTH, ticTacPanel);
 		layout.putConstraint(SpringLayout.WEST, pingPongPanel, 70, SpringLayout.WEST, this);
+	}
+	
+	
+	private void outputAndUpdate()
+	{
+		JFileChooser fileChooser = new JFileChooser();
+		String path = ".";
+
+		fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+
+		if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION)
+		{
+			path = fileChooser.getCurrentDirectory().getAbsolutePath() + "/";
+			
+			
+
+		}
+		String score = ""; 
+//		app.save(path, app.displayDemoCode());
+//		displayArea.setText(app.displayDemoCode());
+//		displayArea.setBackground(Color.RED);
 	}
 
 }
