@@ -8,6 +8,8 @@ import game.view.*;
 
 public class Controller
 {
+//	int idk = 1;
+//	int yse = 2;
 	private GamesFrame window;
 
 	public Controller() throws IOException
@@ -39,6 +41,11 @@ public class Controller
 	public void start()
 	{
 		// TODO Auto-generated method stub
+		
+	}
+	
+	private void iamgessinf()
+	{
 		
 	}
 }
