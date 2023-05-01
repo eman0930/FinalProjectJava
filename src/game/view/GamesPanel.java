@@ -18,7 +18,6 @@ public class GamesPanel extends JPanel
 
 	private JButton pingPongButton;
 	private JButton ticTacToeButton;
-	private JButton saveScore;
 
 	private JPanel ticTacPanel;
 	private JPanel pingPongPanel;
@@ -35,7 +34,6 @@ public class GamesPanel extends JPanel
 		this.pingPongButton = new JButton("Play!");
 
 		this.ticTacToeButton = new JButton("Play!");
-		this.saveScore = new JButton("save score");
 
 		this.pingPongPanel = new JPanel();
 		this.ticTacPanel = new JPanel();
@@ -65,7 +63,6 @@ public class GamesPanel extends JPanel
 		this.setBackground(Color.DARK_GRAY);
 		this.pingPongPanel.add(pingPongButton);
 		this.ticTacPanel.add(ticTacToeButton);
-		this.add(saveScore);
 		this.pingPongPanel.setBackground(Color.DARK_GRAY);
 		this.ticTacPanel.setBackground(Color.DARK_GRAY);
 
@@ -77,7 +74,6 @@ public class GamesPanel extends JPanel
 	{
 		ticTacToeButton.addActionListener(Click -> app.statTicTac());
 		pingPongButton.addActionListener(Click -> app.startPong());
-		saveScore.addActionListener(Click -> outputAndUpdate());
 	}
 
 	private void setupLayout()
