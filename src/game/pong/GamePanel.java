@@ -23,7 +23,10 @@ public class GamePanel extends JPanel implements Runnable
 	Paddle paddle2;
 	Ball ball;
 	Score score;
-
+/**
+ * sets up panel for pong
+ * @param app
+ */
 	GamePanel(Controller app)
 	{
 		this.app = app;
@@ -37,21 +40,27 @@ public class GamePanel extends JPanel implements Runnable
 		gameThread = new Thread(this);
 		gameThread.start();
 	}
-
+/**
+ * makes addes the ball
+ */
 	public void newBall()
 	{
 		random = new Random();
 		ball = new Ball((GAME_WIDTH / 2) - (BALL_DIAMETER / 2), random.nextInt(GAME_HEIGHT - BALL_DIAMETER),
 				BALL_DIAMETER, BALL_DIAMETER);
 	}
-
+/**
+ * addes the paddles
+ */
 	public void newPaddles()
 	{
 		paddle1 = new Paddle(0, (GAME_HEIGHT / 2) - (PADDLE_HEIGHT / 2), PADDLE_WIDTH, PADDLE_HEIGHT, 1);
 		paddle2 = new Paddle(GAME_WIDTH - PADDLE_WIDTH, (GAME_HEIGHT / 2) - (PADDLE_HEIGHT / 2), PADDLE_WIDTH,
 				PADDLE_HEIGHT, 2);
 	}
-
+/**
+ * paints the grafics
+ */
 	public void paint(Graphics g)
 	{
 		image = createImage(getWidth(), getHeight());
@@ -59,7 +68,10 @@ public class GamePanel extends JPanel implements Runnable
 		draw(graphics);
 		g.drawImage(image, 0, 0, this);
 	}
-
+/**
+ * draws the ball and paddels
+ * @param g
+ */
 	public void draw(Graphics g)
 	{
 		paddle1.draw(g);
@@ -69,14 +81,18 @@ public class GamePanel extends JPanel implements Runnable
 		Toolkit.getDefaultToolkit().sync();
 
 	}
-
+	/**
+	 * tells the ball and paddels to move
+	 */
 	public void move()
 	{
 		paddle1.move();
 		paddle2.move();
 		ball.move();
 	}
-
+/**
+ * checs for colishins
+ */
 	public void checkCollision()
 	{
 		if (ball.y <= 0)
@@ -138,7 +154,9 @@ public class GamePanel extends JPanel implements Runnable
 			app.save("gameResolts.txt","player 1: "+ score.player1);
 		}
 	}
-
+/**
+ * tells game how fast to run 
+ */
 	public void run()
 	{
 		// game loop
@@ -160,7 +178,11 @@ public class GamePanel extends JPanel implements Runnable
 			}
 		}
 	}
-
+	/**
+	 * looks for key presed
+	 * @author elea4728
+	 *
+	 */
 	public class AL extends KeyAdapter
 	{
 		public void keyPressed(KeyEvent e)

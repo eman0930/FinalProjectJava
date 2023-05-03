@@ -10,7 +10,11 @@ public class GamesFrame extends JFrame
 {
 	private Controller app;
 	private GamesPanel panel;
-
+/**
+ * sets up frame
+ * @param app
+ * @throws IOException
+ */
 	public GamesFrame(Controller app) throws IOException
 	{
 		super();
@@ -19,7 +23,9 @@ public class GamesFrame extends JFrame
 
 		setupFrame();
 	}
-
+/**
+ * sets up frame
+ */
 	private void setupFrame()
 	{
 		this.setContentPane(panel);

@@ -8,13 +8,20 @@ public class Score extends Rectangle
 	static int GAME_HEIGHT;
 	int player1;
 	int player2;
-
+/**
+ * looks for a score to cnag score
+ * @param GAME_WIDTH
+ * @param GAME_HEIGHT
+ */
 	Score(int GAME_WIDTH, int GAME_HEIGHT)
 	{
 		Score.GAME_WIDTH = GAME_WIDTH;
 		Score.GAME_HEIGHT = GAME_HEIGHT;
 	}
-
+/**
+ * resets and draws again
+ * @param g
+ */
 	public void draw(Graphics g)
 	{
 		g.setColor(Color.white);

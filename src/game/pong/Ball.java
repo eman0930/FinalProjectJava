@@ -9,7 +9,13 @@ public class Ball extends Rectangle
 	int xVelocity;
 	int yVelocity;
 	int initialSpeed = 2;
-	
+	/**
+	 * sets balls size and random direcshen it goes
+	 * @param x
+	 * @param y
+	 * @param width
+	 * @param height
+	 */
 	Ball(int x,  int y, int width, int height)
 	{
 		super(x,y,width,height);
@@ -24,23 +30,34 @@ public class Ball extends Rectangle
 			randomYDirection--;
 		setYDirection(randomYDirection*initialSpeed);
 	}
-	
+	/**
+	 * makes random direcshn
+	 * @param randomXDirection
+	 */
 	public void setXDirection(int randomXDirection)
 	{
 		xVelocity = randomXDirection;
 	}
-	
+	/**
+	 * makes random direshin
+	 * @param randomYDirection
+	 */
 	public void setYDirection(int randomYDirection)
 	{
 		yVelocity = randomYDirection;
 	}
-	
+	/**
+	 * sets how fast it moves
+	 */
 	public void move()
 	{
 		x += xVelocity;
 		y += yVelocity;
 	}
-	
+	/**
+	 * draws the ball
+	 * @param g
+	 */
 	public void draw(Graphics g)
 	{
 		g.setColor(Color.white);

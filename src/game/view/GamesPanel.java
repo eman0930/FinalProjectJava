@@ -23,7 +23,11 @@ public class GamesPanel extends JPanel
 	private JPanel pingPongPanel;
 
 	private SpringLayout layout;
-
+/**
+ * sets up panel
+ * @param app
+ * @throws IOException
+ */
 	public GamesPanel(Controller app) throws IOException
 	{
 		super();
@@ -56,7 +60,9 @@ public class GamesPanel extends JPanel
 		setupListeners();
 		setupLayout();
 	}
-
+/**
+ * setsup panel
+ */
 	private void setupPanel()
 	{
 		this.setLayout(layout);
@@ -69,13 +75,17 @@ public class GamesPanel extends JPanel
 		this.add(ticTacPanel);
 		this.add(pingPongPanel);
 	}
-
+/**
+ * lookes for buttons pressed
+ */
 	private void setupListeners()
 	{
 		ticTacToeButton.addActionListener(Click -> app.statTicTac());
 		pingPongButton.addActionListener(Click -> app.startPong());
 	}
-
+/**
+ * sets up the layout
+ */
 	private void setupLayout()
 	{
 		layout.putConstraint(SpringLayout.NORTH, ticTacPanel, 80, SpringLayout.NORTH, this);

@@ -14,7 +14,12 @@ public class IOcontroller
 {
 	
 	
-	   
+	   /**
+	    * saves game data to a file
+	    * @param app
+	    * @param path
+	    * @param text
+	    */
 	public static void saveTextToFile(Controller app, String path, String text)
 	{
 		String filename = path;

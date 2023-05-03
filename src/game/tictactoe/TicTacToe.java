@@ -14,7 +14,9 @@ public class TicTacToe implements ActionListener
 	JLabel textField = new JLabel();
 	JButton[] buttons = new JButton[9];
 	boolean player1_turn;
-
+/**
+ * sets up windo
+ */
 	public TicTacToe()
 	{
 
@@ -53,7 +55,9 @@ public class TicTacToe implements ActionListener
 
 		firstTurn();
 	}
-
+/**
+ * sets up beging of game
+ */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
@@ -86,7 +90,9 @@ public class TicTacToe implements ActionListener
 			}
 		}
 	}
-
+/**
+ * says who goes first
+ */
 	public void firstTurn()
 	{
 		try
@@ -109,7 +115,9 @@ public class TicTacToe implements ActionListener
 			textField.setText("O turn");
 		}
 	}
-
+/**
+ * checs for a win luse or tie
+ */
 	public void check()
 	{
 		if ((buttons[0].getText() == "X") && (buttons[1].getText() == "X") && (buttons[2].getText() == "X"))
@@ -193,7 +201,12 @@ public class TicTacToe implements ActionListener
 			}
 		}
 	}
-
+/**
+ * what happes if x wins
+ * @param a
+ * @param b
+ * @param c
+ */
 	public void xWins(int a, int b, int c)
 	{
 		buttons[a].setBackground(Color.GREEN);
@@ -209,7 +222,12 @@ public class TicTacToe implements ActionListener
 		}
 		textField.setText("X wins");
 	}
-
+/**
+ * what happens if o wins
+ * @param a
+ * @param b
+ * @param c
+ */
 	public void oWins(int a, int b, int c)
 	{
 		buttons[a].setBackground(Color.GREEN);
@@ -225,7 +243,9 @@ public class TicTacToe implements ActionListener
 		}
 		textField.setText("O wins");
 	}
-
+/**
+ * what happens if its a tie
+ */
 	public void tie()
 	{
 		buttons[1].setBackground(Color.YELLOW);

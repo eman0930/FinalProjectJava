@@ -7,7 +7,10 @@ import game.controller.Controller;
 public class GameFrame extends JFrame
 {
 	GamePanel panel;
-	
+	/**
+	 * makes the frame for pong
+	 * @param app
+	 */
 	public GameFrame(Controller app)
 	{
 		panel = new GamePanel(app);

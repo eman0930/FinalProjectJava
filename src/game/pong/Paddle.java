@@ -8,13 +8,23 @@ public class Paddle extends Rectangle
 	int id;
 	int yVelocity;
 	int speed = 10;
-	
+	/**
+	 * sets up the padels
+	 * @param x
+	 * @param y
+	 * @param PADDLE_WIDTH
+	 * @param PADDLE_HEIGHT
+	 * @param id
+	 */
 	Paddle(int x, int y, int PADDLE_WIDTH, int PADDLE_HEIGHT, int id)
 	{
 		super(x,y,PADDLE_WIDTH,PADDLE_HEIGHT);
 		this.id=id;
 	}
-	
+	/**
+	 * looks for key pressed
+	 * @param e
+	 */
 	public void keyPressed(KeyEvent e)
 	{
 		switch(id)
@@ -41,7 +51,10 @@ public class Paddle extends Rectangle
 			break;
 		}
 	}
-	
+	/**
+	 * looks for when kee is relessed
+	 * @param e
+	 */
 	public void KeyReleased(KeyEvent e)
 	{
 		switch(id)
@@ -68,15 +81,25 @@ public class Paddle extends Rectangle
 			break;
 		}
 	}
-	
+	/**
+	 * sets the speed
+	 * @param yDirection
+	 */
 	public void setYDirection(int yDirection)
 	{
 		yVelocity = yDirection;
 	}
+	/**
+	 * tells it to move
+	 */
 	public void move()
 	{
 		y= y + yVelocity;
 	}
+	/**
+	 * draws
+	 * @param g
+	 */
 	public void draw(Graphics g)
 	{
 		if(id==1)
