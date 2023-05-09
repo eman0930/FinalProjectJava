@@ -1,1 +1,1 @@
-player 2: 10
+player 1: 40
